@@ -32,55 +32,57 @@
             transition: 0.3s;
         }
 
-        /* ===== ВЕРХНИЙ БЛОК С ЛОГОТИПОМ ===== */
+        /* ===== ВЕРХНИЙ БЛОК ===== */
         .brand {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 16px;
-            margin-bottom: 8px;
+            gap: 14px;
+            margin-bottom: 6px;
             flex-wrap: wrap;
         }
 
         .brand .logo {
-            width: 52px;
-            height: 52px;
+            width: 58px;
+            height: 58px;
             object-fit: contain;
             display: inline-block;
-            order: 0;
+            order: 2; /* иконка справа */
         }
 
-        .brand h1 {
-            font-family: 'Arial Black', 'Impact', sans-serif;
-            font-size: 42px;
-            font-weight: 900;
-            color: #fc4903;
-            letter-spacing: 1px;
-            margin: 0;
+        .brand .title-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
             order: 1;
         }
 
-        .brand .app-name {
+        .brand .title-group .main-title {
             font-family: 'Arial Black', 'Impact', sans-serif;
-            font-size: 26px;
-            font-weight: 700;
-            color: #3b3b3b;
-            letter-spacing: 1px;
-            margin: 0;
-            order: 2;
+            font-size: 44px;
+            font-weight: 900;
+            color: #1a1a1a;
+            letter-spacing: 2px;
+            line-height: 1;
         }
 
-        .brand .app-name span {
+        .brand .title-group .sub-title {
+            font-family: 'Arial Black', 'Impact', sans-serif;
+            font-size: 30px;
+            font-weight: 900;
             color: #fc4903;
+            letter-spacing: 2px;
+            line-height: 1.1;
+            margin-top: 2px;
         }
 
-        .sub {
-            font-size: 16px;
-            font-weight: 400;
-            color: #777;
-            margin-top: -4px;
+        .slogan {
+            font-size: 17px;
+            font-weight: 500;
+            color: #555555;
+            margin-top: 8px;
             margin-bottom: 40px;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.4px;
         }
 
         /* ===== КАРТОЧКИ ===== */
@@ -115,15 +117,15 @@
         .card-header h2 {
             font-family: 'Arial Black', 'Impact', sans-serif;
             font-size: 26px;
-            font-weight: 700;
-            color: #2d2d2d;
+            font-weight: 800;
+            color: #1a1a1a;
             letter-spacing: 0.5px;
         }
 
         .card-desc {
-            font-size: 17px;
-            font-weight: 400;
-            color: #555;
+            font-size: 18px;
+            font-weight: 600;
+            color: #333333;
             margin-bottom: 20px;
             letter-spacing: 0.2px;
         }
@@ -182,9 +184,9 @@
         }
 
         .qr-label {
-            font-size: 16px;
-            font-weight: 500;
-            color: #3b3b3b;
+            font-size: 17px;
+            font-weight: 600;
+            color: #333333;
             letter-spacing: 0.3px;
         }
 
@@ -199,21 +201,25 @@
                 border-radius: 28px;
             }
 
+            .brand {
+                gap: 10px;
+            }
+
             .brand .logo {
-                width: 42px;
-                height: 42px;
+                width: 44px;
+                height: 44px;
             }
 
-            .brand h1 {
-                font-size: 30px;
+            .brand .title-group .main-title {
+                font-size: 32px;
             }
 
-            .brand .app-name {
-                font-size: 20px;
+            .brand .title-group .sub-title {
+                font-size: 22px;
             }
 
-            .sub {
-                font-size: 14px;
+            .slogan {
+                font-size: 15px;
                 margin-bottom: 28px;
             }
 
@@ -231,6 +237,10 @@
                 height: 34px;
             }
 
+            .card-desc {
+                font-size: 16px;
+            }
+
             .download-btn {
                 padding: 14px 28px;
                 font-size: 18px;
@@ -241,6 +251,10 @@
                 width: 160px;
                 height: 160px;
             }
+
+            .qr-label {
+                font-size: 15px;
+            }
         }
     </style>
 </head>
@@ -250,11 +264,13 @@
 
         <!-- ===== ВЕРХНЯЯ ЧАСТЬ ===== -->
         <div class="brand">
+            <div class="title-group">
+                <div class="main-title">СКАЧАЙТЕ</div>
+                <div class="sub-title">БЕНZОПИЛЫ</div>
+            </div>
             <img src="chainsaw_icon.ico" alt="Бензопила" class="logo" />
-            <h1>СКАЧАЙТЕ</h1>
-            <p class="app-name"><span>БЕНЗОПИЛЫ</span></p>
         </div>
-        <p class="sub">Мобильное приложение для настоящих мастеров</p>
+        <p class="slogan">Мобильное приложение для настоящих мастеров</p>
 
         <!-- ===== ДЕСКТОП ===== -->
         <div class="card">
