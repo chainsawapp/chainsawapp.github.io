@@ -22,7 +22,7 @@
         }
 
         .container {
-            max-width: 780px;
+            max-width: 880px;
             width: 100%;
             background: #f5f5f5;
             border-radius: 40px;
@@ -91,7 +91,7 @@
             color: #444444;
             line-height: 1.6;
             max-width: 600px;
-            margin: 0 auto 24px auto;
+            margin: 0 auto 32px auto;
             background: #eaeaea;
             padding: 18px 24px;
             border-radius: 16px;
@@ -101,48 +101,6 @@
         .description strong {
             color: #fc4903;
             font-weight: 700;
-        }
-
-        /* ===== СКРИНШОТЫ ===== */
-        .screenshots {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            align-items: stretch;
-            margin: 0 auto 32px auto;
-            flex-wrap: wrap;
-        }
-
-        .screenshot-item {
-            flex: 1;
-            min-width: 140px;
-            max-width: 280px;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-            background: #ffffff;
-            border: none;
-            transition: transform 0.2s ease;
-        }
-
-        .screenshot-item:hover {
-            transform: scale(1.02);
-        }
-
-        .screenshot-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .screenshot-label {
-            font-size: 13px;
-            font-weight: 600;
-            color: #888;
-            padding: 8px 0 10px;
-            background: #ffffff;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
         }
 
         /* ===== КАРТОЧКИ ===== */
@@ -216,53 +174,95 @@
             transform: scale(0.96);
         }
 
-        .qr-wrapper {
+        /* ===== СКРИНШОТ ПК (большой) ===== */
+        .screenshot-pc {
+            margin-top: 20px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+            background: #ffffff;
+            border: none;
+        }
+
+        .screenshot-pc img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ===== БЛОК ДЛЯ ТЕЛЕФОНА: QR + СКРИНШОТ ===== */
+        .phone-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .phone-row .qr-wrapper {
             display: flex;
             flex-direction: column;
             align-items: center;
+            flex-shrink: 0;
         }
 
-        .qr-image {
-            width: 200px;
-            height: 200px;
+        .phone-row .qr-image {
+            width: 160px;
+            height: 160px;
             background: #ffffff;
             border-radius: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 0 auto 14px;
             border: 3px solid #e0e0e0;
             overflow: hidden;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-            transition: 0.2s;
         }
 
-        .qr-image img {
+        .phone-row .qr-image img {
             width: 100%;
             height: 100%;
             object-fit: contain;
         }
 
-        .qr-label {
-            font-size: 17px;
+        .phone-row .qr-label {
+            font-size: 14px;
             font-weight: 600;
             color: #333333;
+            margin-top: 8px;
             letter-spacing: 0.3px;
         }
 
-        .qr-label span {
+        .phone-row .qr-label span {
             color: #fc4903;
             font-weight: 700;
         }
 
-        @media (max-width: 600px) {
+        /* ===== СКРИНШОТ ТЕЛЕФОНА (сильно скруглённый) ===== */
+        .screenshot-phone {
+            flex: 1;
+            min-width: 160px;
+            max-width: 300px;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+            background: #ffffff;
+            border: none;
+        }
+
+        .screenshot-phone img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ===== АДАПТИВНОСТЬ ===== */
+        @media (max-width: 700px) {
             .container {
                 padding: 30px 20px 28px;
                 border-radius: 28px;
-            }
-
-            .brand {
-                gap: 10px;
+                max-width: 100%;
             }
 
             .brand .logo {
@@ -286,23 +286,7 @@
             .description {
                 font-size: 14px;
                 padding: 14px 16px;
-                margin-bottom: 18px;
-            }
-
-            .screenshots {
-                gap: 12px;
                 margin-bottom: 24px;
-            }
-
-            .screenshot-item {
-                min-width: 100px;
-                max-width: 160px;
-                border-radius: 18px;
-            }
-
-            .screenshot-label {
-                font-size: 11px;
-                padding: 6px 0 8px;
             }
 
             .card {
@@ -329,13 +313,75 @@
                 width: 100%;
             }
 
-            .qr-image {
-                width: 160px;
-                height: 160px;
+            .phone-row {
+                flex-direction: column;
+                gap: 20px;
             }
 
-            .qr-label {
-                font-size: 15px;
+            .phone-row .qr-image {
+                width: 140px;
+                height: 140px;
+            }
+
+            .screenshot-phone {
+                max-width: 220px;
+                border-radius: 32px;
+            }
+
+            .screenshot-pc {
+                border-radius: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 14px 20px;
+                border-radius: 20px;
+            }
+
+            .brand .title-group .main-title {
+                font-size: 26px;
+            }
+
+            .brand .title-group .sub-title {
+                font-size: 18px;
+            }
+
+            .brand .logo {
+                width: 36px;
+                height: 36px;
+            }
+
+            .slogan {
+                font-size: 13px;
+            }
+
+            .description {
+                font-size: 13px;
+                padding: 12px 14px;
+            }
+
+            .card-header h2 {
+                font-size: 18px;
+            }
+
+            .card-desc {
+                font-size: 14px;
+            }
+
+            .download-btn {
+                font-size: 16px;
+                padding: 12px 20px;
+            }
+
+            .phone-row .qr-image {
+                width: 110px;
+                height: 110px;
+            }
+
+            .screenshot-phone {
+                max-width: 160px;
+                border-radius: 24px;
             }
         }
     </style>
@@ -358,18 +404,6 @@
             <strong>Управляйте каталогом бензопил</strong> с возможностью добавления, редактирования, удаления, поиска и фильтрации. Экспортируйте данные и пользуйтесь удобным интерфейсом.
         </div>
 
-        <!-- ===== СКРИНШОТЫ ===== -->
-        <div class="screenshots">
-            <div class="screenshot-item">
-                <img src="phonep.png" alt="Скриншот телефона" />
-                <div class="screenshot-label">📱 Телефон</div>
-            </div>
-            <div class="screenshot-item">
-                <img src="komp.png" alt="Скриншот компьютера" />
-                <div class="screenshot-label">💻 Компьютер</div>
-            </div>
-        </div>
-
         <!-- ===== ДЕСКТОП ===== -->
         <div class="card">
             <div class="card-header">
@@ -378,6 +412,11 @@
             </div>
             <p class="card-desc">Установочный файл для Windows</p>
             <a href="https://drive.google.com/uc?export=download&id=1SOTuzVqSSnjQQ4HMQtT4Qc-n8cYT9X32" class="download-btn">⬇ СКАЧАТЬ</a>
+
+            <!-- Скриншот ПК (большой, под кнопкой) -->
+            <div class="screenshot-pc">
+                <img src="komp.png" alt="Скриншот приложения на компьютере" />
+            </div>
         </div>
 
         <!-- ===== МОБИЛЬНОЕ ===== -->
@@ -388,12 +427,19 @@
             </div>
             <p class="card-desc">Наведите камеру на QR‑код</p>
 
-            <div class="qr-wrapper">
-                <div class="qr-image">
-                    <img src="qr-code.png" alt="QR-код" />
+            <!-- QR-код слева, скриншот телефона справа -->
+            <div class="phone-row">
+                <div class="qr-wrapper">
+                    <div class="qr-image">
+                        <img src="qr-code.png" alt="QR-код" />
+                    </div>
+                    <div class="qr-label">
+                        <span>⬇</span> Сканируйте
+                    </div>
                 </div>
-                <div class="qr-label">
-                    <span>⬇</span> Сканируйте и устанавливайте
+
+                <div class="screenshot-phone">
+                    <img src="phonep.png" alt="Скриншот приложения на телефоне" />
                 </div>
             </div>
         </div>
