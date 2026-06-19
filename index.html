@@ -85,7 +85,7 @@
             letter-spacing: 0.4px;
         }
 
-        /* ===== ОПИСАНИЕ (БОЛЬШОЕ) ===== */
+        /* ===== ОПИСАНИЕ ===== */
         .description {
             font-size: 20px;
             font-weight: 500;
@@ -175,7 +175,7 @@
             transform: scale(0.96);
         }
 
-        /* ===== СКРИНШОТ ПК (большой) ===== */
+        /* ===== СКРИНШОТ ПК ===== */
         .screenshot-pc {
             margin-top: 20px;
             border-radius: 20px;
@@ -191,7 +191,7 @@
             display: block;
         }
 
-        /* ===== БЛОК ДЛЯ ТЕЛЕФОНА: QR (БОЛЬШОЙ) + СКРИНШОТ ===== */
+        /* ===== БЛОК ДЛЯ ТЕЛЕФОНА ===== */
         .phone-row {
             display: flex;
             align-items: center;
@@ -240,7 +240,7 @@
             font-weight: 700;
         }
 
-        /* ===== СКРИНШОТ ТЕЛЕФОНА (сильно скруглённый) ===== */
+        /* ===== СКРИНШОТ ТЕЛЕФОНА ===== */
         .screenshot-phone {
             flex: 1;
             min-width: 160px;
@@ -256,6 +256,33 @@
             width: 100%;
             height: auto;
             display: block;
+        }
+
+        /* ===== ПОДВАЛ ===== */
+        .footer {
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .footer .author {
+            font-family: 'Arial Black', 'Impact', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: 1px;
+        }
+
+        .footer .author span {
+            color: #fc4903;
+        }
+
+        .footer .author-sub {
+            font-size: 14px;
+            font-weight: 400;
+            color: #888888;
+            margin-top: 4px;
+            letter-spacing: 0.5px;
         }
 
         /* ===== АДАПТИВНОСТЬ ===== */
@@ -332,6 +359,15 @@
             .screenshot-pc {
                 border-radius: 16px;
             }
+
+            .footer {
+                margin-top: 30px;
+                padding-top: 20px;
+            }
+
+            .footer .author {
+                font-size: 16px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -384,6 +420,14 @@
                 max-width: 160px;
                 border-radius: 24px;
             }
+
+            .footer .author {
+                font-size: 14px;
+            }
+
+            .footer .author-sub {
+                font-size: 12px;
+            }
         }
     </style>
 </head>
@@ -401,7 +445,7 @@
         </div>
         <p class="slogan">Мобильное приложение для настоящих мастеров</p>
 
-        <!-- ===== ОПИСАНИЕ (БОЛЬШОЕ) ===== -->
+        <!-- ===== ОПИСАНИЕ ===== -->
         <div class="description">
             <strong>Управляйте каталогом бензопил</strong> с возможностью добавления, редактирования, удаления, поиска и фильтрации. Экспортируйте данные и пользуйтесь удобным интерфейсом.
         </div>
@@ -441,6 +485,16 @@
                 <div class="screenshot-phone">
                     <img src="phonep.png" alt="Скриншот приложения на телефоне" />
                 </div>
+            </div>
+        </div>
+
+        <!-- ===== ПОДВАЛ ===== -->
+        <div class="footer">
+            <div class="author">
+                by <span>Demchuk Irina</span>
+            </div>
+            <div class="author-sub">
+                ✦ промо-лендинг приложения «БЕНЗОПИЛЫ» ✦
             </div>
         </div>
 
